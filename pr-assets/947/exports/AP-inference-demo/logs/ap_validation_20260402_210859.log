@@ -1,0 +1,135 @@
+AP Validation started at 2026-04-02T21:08:59.636909
+Log file: /Users/ukhan/Desktop/ss/movement-fork/examples/datasets/multi-animal/exports/AP-inference-demo/logs/ap_validation_20260402_210859.log
+
+Pass 1: R×M Selection — finding best individual per file from 5 files...
+  Running 15 R×M computations...
+  Best individuals (max R×M): {2Flies.slp: *track_0*, 4Gerbils.slp: *pup unshaved*, 5Mice.slp: *track_0*, 2Bees.slp: *track_1*, 2Mice.slp: *track_0*}
+
+Pass 2: Cross-Individual Ordering Consistency — do individuals from the same video agree on node ordering?
+  Each individual's raw PC1 ordering of GT nodes is compared against the best individual's ordering (the 'pseudo GT').
+  This is a CONSISTENCY check, not a correctness check — high agreement means the body shape is stable across individuals, but says nothing about whether the ordering is anatomically correct.
+  2Flies.slp: 2/2 individuals share the best individual's ordering
+  4Gerbils.slp: 2/4 individuals share the best individual's ordering
+  5Mice.slp: 3/5 individuals share the best individual's ordering
+  2Bees.slp: 2/2 individuals share the best individual's ordering
+  2Mice.slp: 2/2 individuals share the best individual's ordering
+
+Pass 3: Inferred AP Concordance — does each individual's velocity-inferred AP ordering match hand-curated GT?
+  For each individual, GT nodes are projected onto anterior_sign × PC1 (the inferred AP axis). All C(n,2) unique pairs are tested against the hand-curated GT ranking.
+  This tests the full pipeline (PCA + velocity voting) per individual.
+  2Flies.slp:
+    *track_0*: 3/3 pairs = 100.0%  (R=0.13, M=0.18, R×M=0.02)
+    track_1: 3/3 pairs = 100.0%  (R=0.12, M=0.17, R×M=0.02)
+  2Mice.slp:
+    *track_0*: 1/1 pairs = 100.0%  (R=0.17, M=0.23, R×M=0.04)
+    track_1: 1/1 pairs = 100.0%  (R=0.07, M=0.05, R×M=0.00)
+  4Gerbils.slp:
+    female: 15/15 pairs = 100.0%  (R=0.05, M=0.08, R×M=0.00)
+    male: 11/15 pairs = 73.3%  (R=0.17, M=0.10, R×M=0.02)
+    pup shaved: 11/15 pairs = 73.3%  (R=0.30, M=0.06, R×M=0.02)
+    *pup unshaved*: 15/15 pairs = 100.0%  (R=0.39, M=0.62, R×M=0.24)
+  5Mice.slp:
+    *track_0*: 3/3 pairs = 100.0%  (R=0.84, M=1.00, R×M=0.84)
+    track_1: 3/3 pairs = 100.0%  (R=0.77, M=0.93, R×M=0.72)
+    track_2: 3/3 pairs = 100.0%  (R=0.28, M=0.28, R×M=0.08)
+    track_3: 3/3 pairs = 100.0%  (R=0.56, M=0.66, R×M=0.37)
+    track_4: 3/3 pairs = 100.0%  (R=0.68, M=0.77, R×M=0.53)
+  2Bees.slp:
+    track_0: 0/3 pairs = 0.0%  (R=0.07, M=0.06, R×M=0.00)
+    *track_1*: 3/3 pairs = 100.0%  (R=0.41, M=0.50, R×M=0.21)
+
+Generating H5 validation records (all GT pair permutations × all individuals)...
+  Processing 178 validation comparisons with 10 workers...
+    50/178 completed...
+    100/178 completed...
+    150/178 completed...
+
+Saved 178 records to: /Users/ukhan/Desktop/ss/movement-fork/examples/datasets/multi-animal/exports/AP-inference-demo/h5/ap_validation_20260402_210913.h5
+
+──────────────────────────────────────────────────────────────────────
+REPORTING: Filter Cascade & Suggested Pairs
+──────────────────────────────────────────────────────────────────────
+
+3-STEP FILTER CASCADE (best individual per file):
+
+  2Flies.slp:
+    Step 1 (lateral):   8/13 nodes  (GT: 3/3 nodes)
+    Step 2 (opposite):  12/28 candidate pairs
+    Step 3 (distal):    3/12 pairs
+
+  2Mice.slp:
+    Step 1 (lateral):   4/5 nodes  (GT: 2/2 nodes)
+    Step 2 (opposite):  4/6 candidate pairs
+    Step 3 (distal):    4/4 pairs
+
+  4Gerbils.slp:
+    Step 1 (lateral):   7/14 nodes  (GT: 5/6 nodes)
+    Step 2 (opposite):  12/21 candidate pairs
+    Step 3 (distal):    4/12 pairs
+
+  5Mice.slp:
+    Step 1 (lateral):   7/11 nodes  (GT: 3/3 nodes)
+    Step 2 (opposite):  12/21 candidate pairs
+    Step 3 (distal):    6/12 pairs
+
+  2Bees.slp:
+    Step 1 (lateral):   10/21 nodes  (GT: 3/3 nodes)
+    Step 2 (opposite):  24/45 candidate pairs
+    Step 3 (distal):    20/24 pairs
+
+──────────────────────────────────────────────────────────────────────
+SUGGESTED AP PAIR: Auto-Selected Node Pair (3-Step Filter Cascade)
+──────────────────────────────────────────────────────────────────────
+
+2Flies.slp (free-moving-2flies-ID-13nodes-1024x1024x1-30_3pxmm):
+  Hand-curated GT node indices: [0, 1, 2]
+  Suggested pair: [2 → 6] (posterior → anterior, type: distal)
+  Posterior node 2: in GT = True, GT rank = 1
+  Anterior node 6: in GT = False, GT rank = NaN
+  Status: One node in GT
+
+2Mice.slp (free-moving-2mice-noID-5nodes-1280x1024x1-1_9pxmm):
+  Hand-curated GT node indices: [0, 3]
+  Suggested pair: [4 → 0] (posterior → anterior, type: distal)
+  Posterior node 4: in GT = False, GT rank = NaN
+  Anterior node 0: in GT = True, GT rank = 2
+  Status: One node in GT
+
+4Gerbils.slp (free-moving-4gerbils-ID-14nodes-1024x1280x3-2pxmm):
+  Hand-curated GT node indices: [0, 5, 6, 7, 8, 9]
+  Suggested pair: [13 → 0] (posterior → anterior, type: distal)
+  Posterior node 13: in GT = False, GT rank = NaN
+  Anterior node 0: in GT = True, GT rank = 6
+  Status: One node in GT
+
+5Mice.slp (free-moving-5mice-noID-11nodes-1280x1024x1-1_97pxmm):
+  Hand-curated GT node indices: [0, 1, 6]
+  Suggested pair: [10 → 0] (posterior → anterior, type: distal)
+  Posterior node 10: in GT = False, GT rank = NaN
+  Anterior node 0: in GT = True, GT rank = 3
+  Status: One node in GT
+
+2Bees.slp (freemoving-2bees-noID-21nodes-1535x2048x1-14pxmm):
+  Hand-curated GT node indices: [0, 1, 2]
+  Suggested pair: [2 → 5] (posterior → anterior, type: distal)
+  Posterior node 2: in GT = True, GT rank = 1
+  Anterior node 5: in GT = False, GT rank = NaN
+  Status: One node in GT
+
+
+Saved cross-dataset validation figure to: /Users/ukhan/Desktop/ss/movement-fork/examples/datasets/multi-animal/exports/AP-inference-demo/figures/ap_validation_results_20260402_210913.svg
+
+Generating per-file detail plots (best individual)...
+  2Flies.slp: *track_0*
+  Saved: free-moving-2flies-ID-13nodes-1024x1024x1-30_3pxmm_track_0_20260402_210913.svg
+  2Mice.slp: *track_0*
+  Saved: free-moving-2mice-noID-5nodes-1280x1024x1-1_9pxmm_track_0_20260402_210913.svg
+  4Gerbils.slp: *pup unshaved*
+  Saved: free-moving-4gerbils-ID-14nodes-1024x1280x3-2pxmm_pup_unshaved_20260402_210913.svg
+  5Mice.slp: *track_0*
+  Saved: free-moving-5mice-noID-11nodes-1280x1024x1-1_97pxmm_track_0_20260402_210913.svg
+  2Bees.slp: *track_1*
+  Saved: freemoving-2bees-noID-21nodes-1535x2048x1-14pxmm_track_1_20260402_210913.svg
+Per-file detail plots saved to: /Users/ukhan/Desktop/ss/movement-fork/examples/datasets/multi-animal/exports/AP-inference-demo/figures
+
+Log saved to: /Users/ukhan/Desktop/ss/movement-fork/examples/datasets/multi-animal/exports/AP-inference-demo/logs/ap_validation_20260402_210859.log
