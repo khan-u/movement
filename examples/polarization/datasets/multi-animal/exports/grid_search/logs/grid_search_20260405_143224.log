@@ -1,0 +1,370 @@
+Grid search started at 2026-04-05T14:32:24.583570
+Log file: /Users/ukhan/Desktop/ss/movement-fork/examples/polarization/datasets/multi-animal/exports/grid_search/logs/grid_search_20260405_143224.log
+
+Starting grid search for AP threshold optimization...
+Using 10 workers
+Computing best individuals via R×M selection...
+  2Mice: track_0 (R×M=0.038)
+  4Gerbils: pup unshaved (R×M=0.245)
+  5Mice: track_0 (R×M=0.843)
+  2Bees: track_1 (R×M=0.206)
+  2Flies: track_0 (R×M=0.024)
+
+Extracting PCA data from cached validation results...
+  2Mice: OK (5 keypoints)
+  4Gerbils: OK (14 keypoints)
+  5Mice: OK (11 keypoints)
+  2Bees: OK (21 keypoints)
+  2Flies: OK (13 keypoints)
+Generated 705024 configurations to test
+Estimated evaluations: 705024 configs × 5 datasets = 3,525,120
+Running with 10 parallel workers...
+Saved top 100 results to: /Users/ukhan/Desktop/ss/movement-fork/examples/polarization/datasets/multi-animal/exports/grid_search/grid_search_top_results_20260405_143323.json
+
+Grid search completed in 58.6 seconds
+
+================================================================================
+TOP 20 CONFIGURATIONS
+================================================================================
+
+--- Rank 1 ---
+Score: both_in_gt=5/5, one_in_gt=5/5, order_correct=5
+Config:
+  midpoint: centroid
+  lateral: percentile (param=50)
+  edge: percentile (param=70)
+  norm: min_max
+  formula: additive
+  pair_scoring: weighted_variance
+  weights: lat=1.0, long=0.5
+Per-dataset:
+  2Mice: [3 -> 0] BOTH, order=correct
+  4Gerbils: [9 -> 5] BOTH, order=correct
+  5Mice: [6 -> 1] BOTH, order=correct
+  2Bees: [2 -> 1] BOTH, order=correct
+  2Flies: [2 -> 0] BOTH, order=correct
+
+--- Rank 2 ---
+Score: both_in_gt=5/5, one_in_gt=5/5, order_correct=5
+Config:
+  midpoint: centroid
+  lateral: percentile (param=50)
+  edge: percentile (param=70)
+  norm: body_width
+  formula: additive
+  pair_scoring: weighted_variance
+  weights: lat=1.0, long=0.5
+Per-dataset:
+  2Mice: [3 -> 0] BOTH, order=correct
+  4Gerbils: [9 -> 5] BOTH, order=correct
+  5Mice: [6 -> 1] BOTH, order=correct
+  2Bees: [2 -> 1] BOTH, order=correct
+  2Flies: [2 -> 0] BOTH, order=correct
+
+--- Rank 3 ---
+Score: both_in_gt=5/5, one_in_gt=5/5, order_correct=5
+Config:
+  midpoint: centroid
+  lateral: percentile (param=50)
+  edge: percentile (param=70)
+  norm: percentile_rank
+  formula: rms
+  pair_scoring: weighted_variance
+  weights: lat=1.0, long=0.5
+Per-dataset:
+  2Mice: [3 -> 0] BOTH, order=correct
+  4Gerbils: [9 -> 5] BOTH, order=correct
+  5Mice: [6 -> 1] BOTH, order=correct
+  2Bees: [2 -> 1] BOTH, order=correct
+  2Flies: [2 -> 0] BOTH, order=correct
+
+--- Rank 4 ---
+Score: both_in_gt=5/5, one_in_gt=5/5, order_correct=5
+Config:
+  midpoint: centroid
+  lateral: percentile (param=50)
+  edge: percentile (param=70)
+  norm: percentile_rank
+  formula: rms
+  pair_scoring: weighted_variance
+  weights: lat=1.0, long=1.0
+Per-dataset:
+  2Mice: [3 -> 0] BOTH, order=correct
+  4Gerbils: [9 -> 5] BOTH, order=correct
+  5Mice: [6 -> 1] BOTH, order=correct
+  2Bees: [2 -> 1] BOTH, order=correct
+  2Flies: [2 -> 0] BOTH, order=correct
+
+--- Rank 5 ---
+Score: both_in_gt=5/5, one_in_gt=5/5, order_correct=5
+Config:
+  midpoint: median
+  lateral: fixed (param=0.3)
+  edge: percentile (param=30)
+  norm: body_width
+  formula: multiplicative
+  pair_scoring: weighted_variance
+  weights: lat=0.5, long=0.0
+Per-dataset:
+  2Mice: [3 -> 0] BOTH, order=correct
+  4Gerbils: [8 -> 5] BOTH, order=correct
+  5Mice: [6 -> 0] BOTH, order=correct
+  2Bees: [2 -> 1] BOTH, order=correct
+  2Flies: [2 -> 0] BOTH, order=correct
+
+--- Rank 6 ---
+Score: both_in_gt=5/5, one_in_gt=5/5, order_correct=5
+Config:
+  midpoint: median
+  lateral: fixed (param=0.3)
+  edge: percentile (param=30)
+  norm: body_width
+  formula: multiplicative
+  pair_scoring: weighted_both
+  weights: lat=0.5, long=0.0
+Per-dataset:
+  2Mice: [3 -> 0] BOTH, order=correct
+  4Gerbils: [8 -> 5] BOTH, order=correct
+  5Mice: [6 -> 0] BOTH, order=correct
+  2Bees: [2 -> 1] BOTH, order=correct
+  2Flies: [2 -> 0] BOTH, order=correct
+
+--- Rank 7 ---
+Score: both_in_gt=5/5, one_in_gt=5/5, order_correct=5
+Config:
+  midpoint: median
+  lateral: fixed (param=0.3)
+  edge: percentile (param=30)
+  norm: body_width
+  formula: multiplicative
+  pair_scoring: weighted_both
+  weights: lat=1.0, long=0.0
+Per-dataset:
+  2Mice: [3 -> 0] BOTH, order=correct
+  4Gerbils: [8 -> 5] BOTH, order=correct
+  5Mice: [6 -> 0] BOTH, order=correct
+  2Bees: [2 -> 1] BOTH, order=correct
+  2Flies: [2 -> 0] BOTH, order=correct
+
+--- Rank 8 ---
+Score: both_in_gt=5/5, one_in_gt=5/5, order_correct=5
+Config:
+  midpoint: median
+  lateral: fixed (param=0.3)
+  edge: percentile (param=30)
+  norm: body_width
+  formula: multiplicative
+  pair_scoring: weighted_both
+  weights: lat=0.5, long=0.5
+Per-dataset:
+  2Mice: [3 -> 0] BOTH, order=correct
+  4Gerbils: [8 -> 0] BOTH, order=correct
+  5Mice: [6 -> 0] BOTH, order=correct
+  2Bees: [2 -> 1] BOTH, order=correct
+  2Flies: [2 -> 0] BOTH, order=correct
+
+--- Rank 9 ---
+Score: both_in_gt=5/5, one_in_gt=5/5, order_correct=5
+Config:
+  midpoint: median
+  lateral: fixed (param=0.3)
+  edge: percentile (param=30)
+  norm: body_width
+  formula: multiplicative
+  pair_scoring: weighted_both
+  weights: lat=1.0, long=0.5
+Per-dataset:
+  2Mice: [3 -> 0] BOTH, order=correct
+  4Gerbils: [8 -> 0] BOTH, order=correct
+  5Mice: [6 -> 0] BOTH, order=correct
+  2Bees: [2 -> 1] BOTH, order=correct
+  2Flies: [2 -> 0] BOTH, order=correct
+
+--- Rank 10 ---
+Score: both_in_gt=5/5, one_in_gt=5/5, order_correct=5
+Config:
+  midpoint: median
+  lateral: fixed (param=0.3)
+  edge: percentile (param=30)
+  norm: min_max
+  formula: multiplicative
+  pair_scoring: weighted_variance
+  weights: lat=0.5, long=0.0
+Per-dataset:
+  2Mice: [3 -> 0] BOTH, order=correct
+  4Gerbils: [8 -> 0] BOTH, order=correct
+  5Mice: [6 -> 0] BOTH, order=correct
+  2Bees: [2 -> 1] BOTH, order=correct
+  2Flies: [2 -> 0] BOTH, order=correct
+
+--- Rank 11 ---
+Score: both_in_gt=5/5, one_in_gt=5/5, order_correct=5
+Config:
+  midpoint: median
+  lateral: fixed (param=0.3)
+  edge: percentile (param=30)
+  norm: min_max
+  formula: multiplicative
+  pair_scoring: weighted_both
+  weights: lat=0.5, long=0.0
+Per-dataset:
+  2Mice: [3 -> 0] BOTH, order=correct
+  4Gerbils: [8 -> 0] BOTH, order=correct
+  5Mice: [6 -> 0] BOTH, order=correct
+  2Bees: [2 -> 1] BOTH, order=correct
+  2Flies: [2 -> 0] BOTH, order=correct
+
+--- Rank 12 ---
+Score: both_in_gt=5/5, one_in_gt=5/5, order_correct=5
+Config:
+  midpoint: median
+  lateral: fixed (param=0.3)
+  edge: percentile (param=30)
+  norm: min_max
+  formula: multiplicative
+  pair_scoring: weighted_both
+  weights: lat=1.0, long=0.0
+Per-dataset:
+  2Mice: [3 -> 0] BOTH, order=correct
+  4Gerbils: [8 -> 0] BOTH, order=correct
+  5Mice: [6 -> 0] BOTH, order=correct
+  2Bees: [2 -> 1] BOTH, order=correct
+  2Flies: [2 -> 0] BOTH, order=correct
+
+--- Rank 13 ---
+Score: both_in_gt=5/5, one_in_gt=5/5, order_correct=5
+Config:
+  midpoint: median
+  lateral: fixed (param=0.3)
+  edge: percentile (param=30)
+  norm: min_max
+  formula: multiplicative
+  pair_scoring: weighted_both
+  weights: lat=0.5, long=0.5
+Per-dataset:
+  2Mice: [3 -> 0] BOTH, order=correct
+  4Gerbils: [8 -> 0] BOTH, order=correct
+  5Mice: [6 -> 0] BOTH, order=correct
+  2Bees: [2 -> 1] BOTH, order=correct
+  2Flies: [2 -> 0] BOTH, order=correct
+
+--- Rank 14 ---
+Score: both_in_gt=5/5, one_in_gt=5/5, order_correct=5
+Config:
+  midpoint: median
+  lateral: fixed (param=0.3)
+  edge: percentile (param=30)
+  norm: min_max
+  formula: multiplicative
+  pair_scoring: weighted_both
+  weights: lat=1.0, long=0.5
+Per-dataset:
+  2Mice: [3 -> 0] BOTH, order=correct
+  4Gerbils: [8 -> 0] BOTH, order=correct
+  5Mice: [6 -> 0] BOTH, order=correct
+  2Bees: [2 -> 1] BOTH, order=correct
+  2Flies: [2 -> 0] BOTH, order=correct
+
+--- Rank 15 ---
+Score: both_in_gt=5/5, one_in_gt=5/5, order_correct=5
+Config:
+  midpoint: median
+  lateral: fixed (param=0.3)
+  edge: percentile (param=40)
+  norm: min_max
+  formula: multiplicative
+  pair_scoring: weighted_both
+  weights: lat=1.0, long=0.5
+Per-dataset:
+  2Mice: [3 -> 0] BOTH, order=correct
+  4Gerbils: [9 -> 0] BOTH, order=correct
+  5Mice: [6 -> 0] BOTH, order=correct
+  2Bees: [2 -> 1] BOTH, order=correct
+  2Flies: [2 -> 0] BOTH, order=correct
+
+--- Rank 16 ---
+Score: both_in_gt=5/5, one_in_gt=5/5, order_correct=5
+Config:
+  midpoint: median
+  lateral: fixed (param=0.3)
+  edge: percentile (param=40)
+  norm: min_max
+  formula: multiplicative
+  pair_scoring: weighted_both
+  weights: lat=1.0, long=1.0
+Per-dataset:
+  2Mice: [3 -> 0] BOTH, order=correct
+  4Gerbils: [9 -> 0] BOTH, order=correct
+  5Mice: [6 -> 0] BOTH, order=correct
+  2Bees: [2 -> 1] BOTH, order=correct
+  2Flies: [2 -> 0] BOTH, order=correct
+
+--- Rank 17 ---
+Score: both_in_gt=5/5, one_in_gt=5/5, order_correct=5
+Config:
+  midpoint: median
+  lateral: fixed (param=0.3)
+  edge: percentile (param=40)
+  norm: body_width
+  formula: multiplicative
+  pair_scoring: weighted_both
+  weights: lat=1.0, long=1.0
+Per-dataset:
+  2Mice: [3 -> 0] BOTH, order=correct
+  4Gerbils: [9 -> 0] BOTH, order=correct
+  5Mice: [6 -> 0] BOTH, order=correct
+  2Bees: [2 -> 1] BOTH, order=correct
+  2Flies: [2 -> 0] BOTH, order=correct
+
+--- Rank 18 ---
+Score: both_in_gt=5/5, one_in_gt=5/5, order_correct=5
+Config:
+  midpoint: median
+  lateral: fixed (param=0.4)
+  edge: percentile (param=30)
+  norm: body_width
+  formula: multiplicative
+  pair_scoring: weighted_both
+  weights: lat=0.5, long=0.0
+Per-dataset:
+  2Mice: [3 -> 0] BOTH, order=correct
+  4Gerbils: [8 -> 0] BOTH, order=correct
+  5Mice: [6 -> 0] BOTH, order=correct
+  2Bees: [2 -> 1] BOTH, order=correct
+  2Flies: [2 -> 0] BOTH, order=correct
+
+--- Rank 19 ---
+Score: both_in_gt=5/5, one_in_gt=5/5, order_correct=5
+Config:
+  midpoint: median
+  lateral: fixed (param=0.4)
+  edge: percentile (param=30)
+  norm: body_width
+  formula: multiplicative
+  pair_scoring: weighted_both
+  weights: lat=1.0, long=0.0
+Per-dataset:
+  2Mice: [3 -> 0] BOTH, order=correct
+  4Gerbils: [8 -> 0] BOTH, order=correct
+  5Mice: [6 -> 0] BOTH, order=correct
+  2Bees: [2 -> 1] BOTH, order=correct
+  2Flies: [2 -> 0] BOTH, order=correct
+
+--- Rank 20 ---
+Score: both_in_gt=5/5, one_in_gt=5/5, order_correct=5
+Config:
+  midpoint: median
+  lateral: fixed (param=0.4)
+  edge: percentile (param=30)
+  norm: min_max
+  formula: multiplicative
+  pair_scoring: weighted_both
+  weights: lat=0.5, long=0.0
+Per-dataset:
+  2Mice: [3 -> 0] BOTH, order=correct
+  4Gerbils: [8 -> 0] BOTH, order=correct
+  5Mice: [6 -> 0] BOTH, order=correct
+  2Bees: [2 -> 1] BOTH, order=correct
+  2Flies: [2 -> 0] BOTH, order=correct
+
+Log saved to: /Users/ukhan/Desktop/ss/movement-fork/examples/polarization/datasets/multi-animal/exports/grid_search/logs/grid_search_20260405_143224.log

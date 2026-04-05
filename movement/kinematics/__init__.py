@@ -17,6 +17,7 @@ from movement.kinematics.orientation import (
     compute_head_direction_vector,
 )
 from movement.kinematics.kinetic_energy import compute_kinetic_energy
+from movement.kinematics.collective import compute_polarization
 
 __all__ = [
     "compute_displacement",
@@ -32,4 +33,5 @@ __all__ = [
     "compute_head_direction_vector",
     "compute_forward_vector_angle",
     "compute_kinetic_energy",
+    "compute_polarization",
 ]

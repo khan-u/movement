@@ -1,0 +1,118 @@
+Reference Selection Metric Analysis
+Started at 2026-04-05T14:32:17.612104
+Log file: /Users/ukhan/Desktop/ss/movement-fork/examples/polarization/datasets/multi-animal/exports/reference_selection_test/logs/reference_selection_20260405_143217.log
+
+Analyzing datasets...
+
+  2Flies...
+  2Mice...
+  4Gerbils...
+  5Mice...
+  2Bees...
+
+================================================================================
+REFERENCE SELECTION METRIC COMPARISON
+================================================================================
+
+For each metric, we select the 'best' individual and check GT accuracy.
+Goal: Find metric that most reliably selects individuals with 100% GT accuracy.
+
+--------------------------------------------------------------------------------
+Metric                    | 100% Acc   | Mean Acc   | Datasets
+--------------------------------------------------------------------------------
+rxm                       | 5/5        |  100.0%    | 2Flies:✓ 2Mice:✓ 4Gerbils:✓ 5Mice:✓ 2Bees:✓
+pc1_variance_ratio        | 3/5        |   74.7%    | 2Flies:✓ 2Mice:✓ 4Gerbils:73% 5Mice:✓ 2Bees:0%
+mean_inv_lateral_var      | 5/5        |  100.0%    | 2Flies:✓ 2Mice:✓ 4Gerbils:✓ 5Mice:✓ 2Bees:✓
+agreement_score           | 4/5        |   80.0%    | 2Flies:✓ 2Mice:✓ 4Gerbils:✓ 5Mice:✓ 2Bees:0%
+skeleton_completeness     | 4/5        |   80.0%    | 2Flies:✓ 2Mice:✓ 4Gerbils:✓ 5Mice:✓ 2Bees:0%
+--------------------------------------------------------------------------------
+
+================================================================================
+DETAILED PER-DATASET BREAKDOWN
+================================================================================
+
+2Flies (2 individuals):
+------------------------------------------------------------
+  Individual      | R×M    | PC1 Var | InvLat  | Agree  | Compl  | GT Acc
+  ---------------------------------------------------------------------------
+  track_0         | 0.024  | 3.12    | 0.05    | 1.00   | 1.00   | 100.0%
+  track_1         | 0.021  | 1.95    | 0.05    | 1.00   | 1.00   | 100.0%
+
+  Selection by metric:
+    rxm                      : track_0         (GT: ✓)
+    pc1_variance_ratio       : track_0         (GT: ✓)
+    mean_inv_lateral_var     : track_1         (GT: ✓)
+    agreement_score          : track_0         (GT: ✓)
+    skeleton_completeness    : track_0         (GT: ✓)
+
+2Mice (2 individuals):
+------------------------------------------------------------
+  Individual      | R×M    | PC1 Var | InvLat  | Agree  | Compl  | GT Acc
+  ---------------------------------------------------------------------------
+  track_0         | 0.038  | 7.67    | 0.01    | 1.00   | 1.00   | 100.0%
+  track_1         | 0.003  | 13.11   | 0.01    | 1.00   | 1.00   | 100.0%
+
+  Selection by metric:
+    rxm                      : track_0         (GT: ✓)
+    pc1_variance_ratio       : track_1         (GT: ✓)
+    mean_inv_lateral_var     : track_1         (GT: ✓)
+    agreement_score          : track_0         (GT: ✓)
+    skeleton_completeness    : track_0         (GT: ✓)
+
+4Gerbils (4 individuals):
+------------------------------------------------------------
+  Individual      | R×M    | PC1 Var | InvLat  | Agree  | Compl  | GT Acc
+  ---------------------------------------------------------------------------
+  female          | 0.004  | 3.59    | 0.02    | 0.33   | 1.00   | 100.0%
+  pup unshaved    | 0.245  | 4.07    | 0.05    | 0.33   | 1.00   | 100.0%
+  male            | 0.016  | 6.08    | 0.02    | 0.00   | 1.00   |  73.3%
+  pup shaved      | 0.018  | 2.79    | 0.04    | 0.00   | 1.00   |  73.3%
+
+  Selection by metric:
+    rxm                      : pup unshaved    (GT: ✓)
+    pc1_variance_ratio       : male            (GT: 73%)
+    mean_inv_lateral_var     : pup unshaved    (GT: ✓)
+    agreement_score          : female          (GT: ✓)
+    skeleton_completeness    : female          (GT: ✓)
+
+5Mice (5 individuals):
+------------------------------------------------------------
+  Individual      | R×M    | PC1 Var | InvLat  | Agree  | Compl  | GT Acc
+  ---------------------------------------------------------------------------
+  track_0         | 0.843  | 5.48    | 0.06    | 1.00   | 1.00   | 100.0%
+  track_1         | 0.723  | 5.85    | 0.05    | 1.00   | 1.00   | 100.0%
+  track_2         | 0.079  | 3.47    | 0.06    | 1.00   | 1.00   | 100.0%
+  track_3         | 0.366  | 5.33    | 0.03    | 1.00   | 1.00   | 100.0%
+  track_4         | 0.526  | 4.18    | 0.03    | 1.00   | 1.00   | 100.0%
+
+  Selection by metric:
+    rxm                      : track_0         (GT: ✓)
+    pc1_variance_ratio       : track_1         (GT: ✓)
+    mean_inv_lateral_var     : track_2         (GT: ✓)
+    agreement_score          : track_0         (GT: ✓)
+    skeleton_completeness    : track_0         (GT: ✓)
+
+2Bees (2 individuals):
+------------------------------------------------------------
+  Individual      | R×M    | PC1 Var | InvLat  | Agree  | Compl  | GT Acc
+  ---------------------------------------------------------------------------
+  track_1         | 0.206  | 1.60    | 0.03    | 0.00   | 1.00   | 100.0%
+  track_0         | 0.004  | 2.12    | 0.02    | 0.00   | 1.00   |   0.0%
+
+  Selection by metric:
+    rxm                      : track_1         (GT: ✓)
+    pc1_variance_ratio       : track_0         (GT: 0%)
+    mean_inv_lateral_var     : track_1         (GT: ✓)
+    agreement_score          : track_0         (GT: 0%)
+    skeleton_completeness    : track_0         (GT: 0%)
+
+================================================================================
+CONCLUSION
+================================================================================
+
+Best metric: rxm
+  - Achieves 100% GT accuracy on 5/5 datasets
+  - Mean GT accuracy: 100.0%
+
+
+Log saved to: /Users/ukhan/Desktop/ss/movement-fork/examples/polarization/datasets/multi-animal/exports/reference_selection_test/logs/reference_selection_20260405_143217.log

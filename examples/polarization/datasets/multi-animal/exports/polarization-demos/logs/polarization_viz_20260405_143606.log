@@ -1,0 +1,276 @@
+Polarization Viz started at 2026-04-05T14:36:06.859615
+Console log: /Users/ukhan/Desktop/ss/movement-fork/examples/polarization/datasets/multi-animal/exports/polarization-demos/logs/polarization_viz_20260405_143606.log
+
+
+
+AP VALIDATION H5 DETECTED
+Loading suggested pairs from: ap_validation_20260405_143150.h5
+  [0] free-moving-2flies-ID-13nodes-1024x1024x1-30_3pxmm: [2 → 0] (posterior → anterior)
+  [2] free-moving-4gerbils-ID-14nodes-1024x1280x3-2pxmm: [9 → 5] (posterior → anterior)
+  [3] free-moving-5mice-noID-11nodes-1280x1024x1-1_97pxmm: [6 → 1] (posterior → anterior)
+  [4] freemoving-2bees-noID-21nodes-1535x2048x1-14pxmm: [2 → 1] (posterior → anterior)
+  [1] free-moving-2mice-noID-5nodes-1280x1024x1-1_9pxmm: [3 → 0] (posterior → anterior)
+
+Use suggested node pairs from H5 file? [y/n]:     Please enter 'y' or 'n'.
+Use suggested node pairs from H5 file? [y/n]:     Please enter 'y' or 'n'.
+Use suggested node pairs from H5 file? [y/n]:     Please enter 'y' or 'n'.
+Use suggested node pairs from H5 file? [y/n]:     Please enter 'y' or 'n'.
+Use suggested node pairs from H5 file? [y/n]: Skipping H5 pairs — proceeding to interactive node selection.
+
+
+AVAILABLE DATASETS
+
+Found 5 SLP file(s):
+
+  [0] free-moving-2flies-ID-13nodes-1024x1024x1-30_3pxmm.slp
+  [1] free-moving-2mice-noID-5nodes-1280x1024x1-1_9pxmm.slp
+  [2] free-moving-4gerbils-ID-14nodes-1024x1280x3-2pxmm.slp
+  [3] free-moving-5mice-noID-11nodes-1280x1024x1-1_97pxmm.slp
+  [4] freemoving-2bees-noID-21nodes-1535x2048x1-14pxmm.slp
+
+Select dataset [0-4]:
+Selected: [2] free-moving-4gerbils-ID-14nodes-1024x1280x3-2pxmm.slp
+────────────────────────────────────────────────────────────
+Loading SLP: free-moving-4gerbils-ID-14nodes-1024x1280x3-2pxmm.slp
+Video found: free-moving-4gerbils-ID-14nodes-1024x1280x3-2pxmm.mp4
+FPS: 25 (from video metadata)
+Video frames: 2560
+Video resolution: 1280x1024
+Video duration: 102.40s
+Tracking frames: 2560
+Individuals (4): [np.str_('female'), np.str_('male'), np.str_('pup shaved'), np.str_('pup unshaved')]
+Keypoints (14): [np.str_('nose'), np.str_('lefteye'), np.str_('righteye'), np.str_('leftear'), np.str_('rightear'), np.str_('spine1'), np.str_('spine2'), np.str_('spine3'), np.str_('spine4'), np.str_('spine5'), np.str_('tail1'), np.str_('tail2'), np.str_('tail3'), np.str_('tail4')]
+
+
+NODE SELECTION
+
+Available nodes: nose[0]  lefteye[1]  righteye[2]  leftear[3]  rightear[4]  spine1[5]  spine2[6]  spine3[7]  spine4[8]  spine5[9]  tail1[10]  tail2[11]  tail3[12]  tail4[13]
+
+FROM node (should be posterior, e.g., tail_base):
+  Enter index:
+TO node (should be anterior, e.g., head):
+  Enter index:
+Velocity node (for heading):
+  Enter index:
+------------------------------------------------------------
+Final configuration:
+  Velocity:    spine2[6]
+  Orientation: spine2[6] → spine3[7] (from → to)
+------------------------------------------------------------
+
+
+  AP scenario report (running inference on user's pair)...
+    Best individual: pup unshaved (R×M = 0.245)
+    Scenario 11: warn
+    Input has proximal node(s). All pairs have proximal node(s).
+    Suggested alternative (max-separation overall): spine5[9] -> spine1[5] (posterior -> anterior)
+    Switch to suggested pair? [y/n]:     Switching to: spine5[9] -> spine1[5]
+
+Computing validity masks...
+Computing polarization metrics...
+Finding best segment...
+  Computing 25-frame heading for segment scoring...
+
+5-panel continuous segment starting at frame 1900 (score=13.774)
+Panel frames: [1900 1925 1950 1975 2000]
+Orientation pol range: 0.385 to 0.779 (5/5 panels >= 0.15)
+Heading pol range: 0.259 to 0.657 (5/5 panels >= 0.15)
+Extracting per-animal coordinates for selected frames...
+
+Loading selected video frames from: free-moving-4gerbils-ID-14nodes-1024x1280x3-2pxmm.mp4
+  Loaded 6 frames (of 2560 total)
+POLARIZATION ANALYSIS LOG
+
+Video: free-moving-4gerbils-ID-14nodes-1024x1280x3-2pxmm.mp4
+FPS: 25.0
+Frame interval: 25 frames (1 second)
+Number of panels: 5
+Segment type: CONTINUOUS
+
+
+FINAL NODE CONFIGURATION
+
+  Velocity node:     spine2[6]
+  Orientation FROM:  spine5[9] (posterior)
+  Orientation TO:    spine1[5] (anterior)
+  Fallback TO:       None (strict mode)
+
+
+POLARIZATION VERIFICATION
+
+Coordinate system notes:
+  - Image coords: y increases DOWNWARD (top=0)
+  - Polar plot: math convention (0=E, 90=N, CCW positive)
+  - Y-flip: dy = -(to_y - from_y) for image→Cartesian
+  - Heading from 1-second displacement (matches Row 1)
+
+────────────────────────────────────────────────────────────────────────────────
+PANEL 0 (0s) | Frame 1900 | Prev frame 1875
+────────────────────────────────────────────────────────────────────────────────
+
+  ORIENTATION (spine5 → spine1):
+  Animal     post_x   post_y    ant_x    ant_y │       dx   dy_img  dy_cart │   angle°
+  -------- -------- -------- -------- -------- │ -------- -------- -------- │ --------
+  0          1044.2    615.9   1156.7    476.5 │    112.5   -139.3    139.3 │     51.1
+  1          1164.3    736.0   1180.4    624.4 │     16.1   -111.5    111.5 │     81.8
+  2          1016.1    184.4   1072.3    123.4 │     56.2    -61.0     61.0 │     47.3
+  3           751.5    168.4    679.4    120.5 │    -72.1    -47.9     47.9 │    146.4
+
+  ORIENTATION POLARIZATION CHECK:
+    Mean unit vector: (0.1539, 0.7641)
+    Computed:  pol=0.7795, theta=78.6°
+    Stored:    pol=0.7795, theta=78.6°
+    MATCH: ✓ YES
+
+  HEADING/VELOCITY (frame 1875 to 1900):
+  Animal     prev_x   prev_y   curr_x   curr_y │       dx   dy_img  dy_cart │   angle°
+  -------- -------- -------- -------- -------- │ -------- -------- -------- │ --------
+  0          1156.4    552.0   1135.6    516.0 │    -20.8    -36.0     36.0 │    120.0
+  1          1095.5    740.1   1199.9    655.4 │    104.4    -84.7     84.7 │     39.1
+  2           988.4    123.2   1060.3    135.9 │     72.0     12.7    -12.7 │    -10.0
+  3           688.2    136.5    688.4    136.5 │      0.2     -0.0      0.0 │      1.0
+
+  HEADING POLARIZATION CHECK:
+    Mean unit vector: (0.5652, 0.3349)
+    Computed:  pol=0.6570, theta=30.7°
+    Stored:    pol=0.6570, theta=30.7°
+    MATCH: ✓ YES
+
+────────────────────────────────────────────────────────────────────────────────
+PANEL 1 (1s) | Frame 1925 | Prev frame 1900
+────────────────────────────────────────────────────────────────────────────────
+
+  ORIENTATION (spine5 → spine1):
+  Animal     post_x   post_y    ant_x    ant_y │       dx   dy_img  dy_cart │   angle°
+  -------- -------- -------- -------- -------- │ -------- -------- -------- │ --------
+  0          1027.8    636.1   1135.5    535.5 │    107.6   -100.7    100.7 │     43.1
+  1          1155.6    739.5   1168.4    631.8 │     12.8   -107.7    107.7 │     83.2
+  2          1023.6    167.4   1092.6    127.8 │     69.0    -39.5     39.5 │     29.8
+  3           752.0    168.4    676.3    123.4 │    -75.7    -45.1     45.1 │    149.2
+
+  ORIENTATION POLARIZATION CHECK:
+    Mean unit vector: (0.2143, 0.6711)
+    Computed:  pol=0.7045, theta=72.3°
+    Stored:    pol=0.7045, theta=72.3°
+    MATCH: ✓ YES
+
+  HEADING/VELOCITY (frame 1900 to 1925):
+  Animal     prev_x   prev_y   curr_x   curr_y │       dx   dy_img  dy_cart │   angle°
+  -------- -------- -------- -------- -------- │ -------- -------- -------- │ --------
+  0          1135.6    516.0   1116.7    568.4 │    -18.9     52.4    -52.4 │   -109.8
+  1          1199.9    655.4   1188.3    660.1 │    -11.6      4.7     -4.7 │   -157.7
+  2          1060.3    135.9   1075.4    136.0 │     15.1      0.1     -0.1 │     -0.3
+  3           688.4    136.5    688.5    139.3 │      0.1      2.9     -2.9 │    -88.5
+
+  HEADING POLARIZATION CHECK:
+    Mean unit vector: (-0.0596, -0.5813)
+    Computed:  pol=0.5844, theta=-95.9°
+    Stored:    pol=0.5844, theta=-95.9°
+    MATCH: ✓ YES
+
+────────────────────────────────────────────────────────────────────────────────
+PANEL 2 (2s) | Frame 1950 | Prev frame 1925
+────────────────────────────────────────────────────────────────────────────────
+
+  ORIENTATION (spine5 → spine1):
+  Animal     post_x   post_y    ant_x    ant_y │       dx   dy_img  dy_cart │   angle°
+  -------- -------- -------- -------- -------- │ -------- -------- -------- │ --------
+  0          1084.4    524.4   1108.0    543.7 │     23.6     19.3    -19.3 │    -39.2
+  1          1147.6    736.4   1159.6    623.2 │     12.0   -113.1    113.1 │     83.9
+  2          1040.0    168.0   1108.5    144.0 │     68.5    -23.9     23.9 │     19.3
+  3           752.0    168.3    676.3    123.6 │    -75.7    -44.7     44.7 │    149.4
+
+  ORIENTATION POLARIZATION CHECK:
+    Mean unit vector: (0.2409, 0.3001)
+    Computed:  pol=0.3849, theta=51.2°
+    Stored:    pol=0.3849, theta=51.2°
+    MATCH: ✓ YES
+
+  HEADING/VELOCITY (frame 1925 to 1950):
+  Animal     prev_x   prev_y   curr_x   curr_y │       dx   dy_img  dy_cart │   angle°
+  -------- -------- -------- -------- -------- │ -------- -------- -------- │ --------
+  0          1116.7    568.4   1100.1    575.9 │    -16.6      7.5     -7.5 │   -155.8
+  1          1188.3    660.1   1180.2    652.0 │     -8.2     -8.1      8.1 │    135.2
+  2          1075.4    136.0   1095.6    148.3 │     20.2     12.3    -12.3 │    -31.3
+  3           688.5    139.3    688.2    139.4 │     -0.3      0.0     -0.0 │   -172.2
+
+  HEADING POLARIZATION CHECK:
+    Mean unit vector: (-0.4395, -0.0899)
+    Computed:  pol=0.4486, theta=-168.4°
+    Stored:    pol=0.4486, theta=-168.4°
+    MATCH: ✓ YES
+
+────────────────────────────────────────────────────────────────────────────────
+PANEL 3 (3s) | Frame 1975 | Prev frame 1950
+────────────────────────────────────────────────────────────────────────────────
+
+  ORIENTATION (spine5 → spine1):
+  Animal     post_x   post_y    ant_x    ant_y │       dx   dy_img  dy_cart │   angle°
+  -------- -------- -------- -------- -------- │ -------- -------- -------- │ --------
+  0          1027.5    631.7   1132.0    536.4 │    104.5    -95.3     95.3 │     42.4
+  1          1148.0    735.4   1159.9    615.4 │     11.9   -120.0    120.0 │     84.3
+  2          1040.3    168.5   1111.5    140.3 │     71.1    -28.2     28.2 │     21.6
+  3           752.0    168.7    676.4    123.5 │    -75.7    -45.2     45.2 │    149.2
+
+  ORIENTATION POLARIZATION CHECK:
+    Mean unit vector: (0.2272, 0.6374)
+    Computed:  pol=0.6767, theta=70.4°
+    Stored:    pol=0.6767, theta=70.4°
+    MATCH: ✓ YES
+
+  HEADING/VELOCITY (frame 1950 to 1975):
+  Animal     prev_x   prev_y   curr_x   curr_y │       dx   dy_img  dy_cart │   angle°
+  -------- -------- -------- -------- -------- │ -------- -------- -------- │ --------
+  0          1100.1    575.9   1108.6    567.8 │      8.5     -8.1      8.1 │     43.5
+  1          1180.2    652.0   1175.8    647.5 │     -4.3     -4.5      4.5 │    134.1
+  2          1095.6    148.3   1095.3    144.7 │     -0.2     -3.6      3.6 │     93.5
+  3           688.2    139.4    688.3    139.4 │      0.1      0.1     -0.1 │    -29.5
+
+  HEADING POLARIZATION CHECK:
+    Mean unit vector: (0.2096, 0.4780)
+    Computed:  pol=0.5219, theta=66.3°
+    Stored:    pol=0.5219, theta=66.3°
+    MATCH: ✓ YES
+
+────────────────────────────────────────────────────────────────────────────────
+PANEL 4 (4s) | Frame 2000 | Prev frame 1975
+────────────────────────────────────────────────────────────────────────────────
+
+  ORIENTATION (spine5 → spine1):
+  Animal     post_x   post_y    ant_x    ant_y │       dx   dy_img  dy_cart │   angle°
+  -------- -------- -------- -------- -------- │ -------- -------- -------- │ --------
+  0          1055.5    551.9   1207.6    603.5 │    152.2     51.6    -51.6 │    -18.7
+  1          1140.6    739.8   1135.6    659.7 │     -5.0    -80.1     80.1 │     93.6
+  2          1039.8    168.4   1108.2    140.0 │     68.4    -28.4     28.4 │     22.5
+  3           752.0    168.5    676.0    123.4 │    -76.0    -45.1     45.1 │    149.3
+
+  ORIENTATION POLARIZATION CHECK:
+    Mean unit vector: (0.2371, 0.3926)
+    Computed:  pol=0.4586, theta=58.9°
+    Stored:    pol=0.4586, theta=58.9°
+    MATCH: ✓ YES
+
+  HEADING/VELOCITY (frame 1975 to 2000):
+  Animal     prev_x   prev_y   curr_x   curr_y │       dx   dy_img  dy_cart │   angle°
+  -------- -------- -------- -------- -------- │ -------- -------- -------- │ --------
+  0          1108.6    567.8   1176.1    575.5 │     67.5      7.7     -7.7 │     -6.5
+  1          1175.8    647.5   1160.0    675.6 │    -15.8     28.1    -28.1 │   -119.4
+  2          1095.3    144.7   1095.2    147.4 │     -0.2      2.6     -2.6 │    -94.2
+  3           688.3    139.4    687.9    136.4 │     -0.4     -3.0      3.0 │     97.0
+
+  HEADING POLARIZATION CHECK:
+    Mean unit vector: (0.0770, -0.2474)
+    Computed:  pol=0.2591, theta=-72.7°
+    Stored:    pol=0.2591, theta=-72.7°
+    MATCH: ✓ YES
+
+
+END LOG
+
+Creating figure...
+Saved SVG: /Users/ukhan/Desktop/ss/movement-fork/examples/polarization/datasets/multi-animal/exports/polarization-demos/figures/free-moving-4gerbils-ID-14nodes-1024x1280x3-2pxmm_20260405_143649_polarization-plot.svg
+
+
+COMPLETED
+
+Console log saved to: /Users/ukhan/Desktop/ss/movement-fork/examples/polarization/datasets/multi-animal/exports/polarization-demos/logs/polarization_viz_20260405_143606.log
